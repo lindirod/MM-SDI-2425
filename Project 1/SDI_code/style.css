@@ -1,0 +1,23 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+#restart{
+  appearance: none;
+  background-color: #FAFBFC;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 10px;
+}
+
+#restart:hover {
+  background-color: #009688;
+  color: white;
+}

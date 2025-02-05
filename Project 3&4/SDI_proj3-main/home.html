@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="icon/emotional_6911282.png">
+    <title>Emotion Canvas - Welcome</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: black;
+            font-family: 'Afacad', sans-serif;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 2px;
+            font-size: 3em;
+        }
+
+        #content {
+            text-align: center;
+        }
+
+        p {
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            color: #fff;
+            background-color: #04568c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Afacad', sans-serif;
+        }
+
+        button:hover {
+            background-color: #ae2543;
+        }
+
+        #videoContainer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: 9999;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <button onclick="startExperience()">Start the Experience</button>
+    </div>
+
+    <div id="videoContainer">
+        <video id="introVideo" src="videoIntro/videoIntro.mp4"></video>
+    </div>
+
+
+    <script>
+        function startExperience() {
+            const content = document.getElementById('content');
+            const videoContainer = document.getElementById('videoContainer');
+            const introVideo = document.getElementById('introVideo');
+
+            // Hide the main content and show the video container
+            content.style.display = 'none';
+            videoContainer.style.display = 'block';
+
+            // Play the video
+            introVideo.play();
+
+            // Redirect to the canvas after the video ends
+            introVideo.onended = () => {
+                window.location.href = "index.html";
+            };
+        }
+
+    </script>
+</body>
+</html>
